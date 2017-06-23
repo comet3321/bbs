@@ -14,20 +14,30 @@
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $stmt = $pdo->prepare("SELECT password FROM posts where id = :id");
-    $stmt->bindParam(':id', $_POST['user_id'], PDO::PARAM_INT);
+    $stmt->bindParam(':id', $user_id, PDO::PARAM_INT);
     $stmt->execute();
 
-    $user_password = $stmt->fetchAll();
+    $user_password = $stmt->fetchColumn();
 
   } catch (Exception $e) {
     echo $e->getMessage() . PHP_EOL;
   }
 
   if ($user_password === $request_pass) {
-    echo "success!!!";
+
+    try {
+      $stmt = $pdo->prepare("DELETE FROM posts WHERE id = :id");
+      $stmt->bindParam(':id', $user_id, PDO::PARAM_INT);
+      $stmt->execute();
+
+      header('location: index.php');
+      exit();
+    } catch (Exception $e) {
+      echo $e->getMessage() . PHP_EOL;
+    }
   }else{
     echo "password is incorrect!!";
+    exit();
   }
 
-  var_dump($user_password[0]);
-  echo $request_pass;
+  //$pass = array_column($user_password, 'password');
