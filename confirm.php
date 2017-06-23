@@ -11,7 +11,7 @@
   </head>
   <body>
     <form class="" action="delete.php" method="post">
-      削除用パスワードを入力してください。:<input type="text" name="delete_pass" value="">
+      削除用パスワードを入力してください。:<input type="password" name="delete_pass" value="">
       <input type="hidden" name="user_id" value="<?= h($user_id) ?>">
       <button type="submit" name="submit">削除</button>
     </form>

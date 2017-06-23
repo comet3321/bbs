@@ -1,10 +1,75 @@
-ul{
-  list-style: none;
+body{
+  font-family: Arial, sans-serif;
+  background-color: #f9ffff;
 }
-li{
-  margin-bottom: 10px
+
+header{
+  position: relative;
+  box-shadow: 0 0 0 3px #dbeefb;
+  background-color: white;
 }
-ul > li > .delete_todo{
-  cursor: pointer;
+
+.container{
+  width: 940px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1{
   display: inline-block;
+  color: #3498db;
+  font-size: 40px;
+}
+
+#posted_number{
+  font-family: arial black;
+  background-color: #001e43;
+  width: 130px;
+  height: 40px;
+  display: inline-block;
+  line-height: 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: 30px;
+  left: 100px;
+}
+#posted_number h2{
+  font-size: 14px;
+  font-weight: normal;
+  color: white;
+}
+#posted_number span{
+  font-size: 26px;
+  font-weight: bold;
+  color: #e67e22;
+}
+#main .container{
+  background-color: #EFEFEF;
+}
+#post-row{
+  margin-bottom: 50px;
+  width: 750px;
+  text-align: left;
+
+}
+dt{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+dd{
+  position: relative;
+  margin-bottom: 20px;
+}
+
+a{
+  text-decoration: none;
+  color: #ffd6ea;
+  position: absolute;
+  right: 0px;
+}
+a:hover{
+  color: #ff7f7f;
+}
+#form{
+  text-align: left;
 }

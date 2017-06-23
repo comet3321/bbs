@@ -36,7 +36,7 @@
       echo $e->getMessage() . PHP_EOL;
     }
   }else{
-    echo "password is incorrect!!";
+    echo "パスワードが違います。";
     exit();
   }
 
