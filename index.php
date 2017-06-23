@@ -14,6 +14,8 @@
       created timestamp not null default current_timestamp
     )");
     $sql_result = $pdo->query("select * from posts order by id desc");
+    $post = $pdo->query("select * from posts");
+    $posts = $post->fetchAll();
 
   } catch (Exception $e) {
     echo $e->getMessage() . PHP_EOL;
@@ -38,13 +40,12 @@
        delete_pass:<input type="text" name="password" value="">
        <button type="submit" name="submit" id="submit">送信</button>
      </form>
-     <h2>現在の投稿()</h2>
+     <h2>現在の投稿(<?php echo count($posts); ?>件)</h2>
      <ul id="post">
       <?php foreach ($sql_result as $row) : ?>
         <li id ="post_<?= h($row["id"]) ?>">
           <?=  h($row["body"]) ?>(<?= h($row["name"]) ?>[ID:<?= h($row["crypt"]) ?>]) --<?= h($row["created"])?>
           <a href="confirm.php?id=<?= h($row["id"]) ?>">×</a>
-          <p><?= h($row["id"]) ?></p>
         </li>
       <?php endforeach; ?>
     </ul>
