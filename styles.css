@@ -1,0 +1,10 @@
+ul{
+  list-style: none;
+}
+li{
+  margin-bottom: 10px
+}
+ul > li > .delete_todo{
+  cursor: pointer;
+  display: inline-block;
+}
