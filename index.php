@@ -37,7 +37,9 @@
            <div id="posted_number">
              <h2>現在の投稿(<span><?php echo count($posts); ?></span>件)</h2>
            </div>
-           <h1>掲示板</h1>
+           <div id = "title">
+             <h1>掲示板</h1>
+           </div>
        </div><!-- container -->
        </header>
        <div id="main">
@@ -46,7 +48,7 @@
             <dl>
              <?php foreach ($sql_result as $row) : ?>
                <dt>
-                   <span style="color: green;">名前：<?= h($row["name"]) ?></span>　<?= h($row["created"])?>　ID:<?= h($row["crypt"]) ?><br>
+                   <span style="color: #e67e22;">名前：<?= h($row["name"]) ?></span>　<span style ="font-size: 15px; color: #a0a0a0;"><?= h($row["created"])?>　ID:<?= h($row["crypt"]) ?></span><br>
                </dt>
                <dd>
                  <?=  h($row["body"]) ?>

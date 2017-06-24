@@ -32,7 +32,7 @@
    <body>
      <?php foreach ($sql_result as $row) : ?>
        <dt>
-           <span style="color: green;">名前：<?= h($row["name"]) ?></span>　<?= h($row["created"])?>　ID:<?= h($row["crypt"]) ?><br>
+           <span style="color: #e67e22;">名前：<?= h($row["name"]) ?></span>　<span style ="font-size: 15px; color: #a0a0a0;"><?= h($row["created"])?>　ID:<?= h($row["crypt"]) ?></span><br>
        </dt>
        <dd>
          <?=  h($row["body"]) ?>

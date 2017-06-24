@@ -1,12 +1,14 @@
 body{
   font-family: Arial, sans-serif;
-  background-color: #f9ffff;
+  background-color: #dedede;
 }
 
 header{
   position: relative;
-  box-shadow: 0 0 0 3px #dbeefb;
   background-color: white;
+  height: 100px;
+  background-color: #001e43;
+
 }
 
 .container{
@@ -15,20 +17,17 @@ header{
   text-align: center;
 }
 
-h1{
+
+#title h1{
   display: inline-block;
-  color: #3498db;
+  color: white;
   font-size: 40px;
 }
 
 #posted_number{
   font-family: arial black;
-  background-color: #001e43;
-  width: 130px;
-  height: 40px;
   display: inline-block;
   line-height: 10px;
-  border-radius: 10px;
   position: absolute;
   top: 30px;
   left: 100px;
@@ -43,8 +42,12 @@ h1{
   font-weight: bold;
   color: #e67e22;
 }
+
 #main .container{
-  background-color: #EFEFEF;
+  background-color: #dedede;
+  margin-top: 100px;
+  border-top: 2px dashed #001e43;
+
 }
 #post-row{
   margin-bottom: 50px;
@@ -54,21 +57,23 @@ h1{
 }
 dt{
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 dd{
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  font-size: 20px;
 }
 
 a{
   text-decoration: none;
-  color: #ffd6ea;
+  color: #a0a0a0;
   position: absolute;
   right: 0px;
+  font-size: 15px;
 }
 a:hover{
-  color: #ff7f7f;
+  color: red;
 }
 #form{
   text-align: left;
