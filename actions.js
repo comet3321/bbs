@@ -20,4 +20,19 @@ $(function(){
                 $('#load_result').load('more.php');
                 $('#load_more').hide();
             });
+
+  //modal
+  $("#modal-open").click(function(){
+    $("#modal").removeClass("hidden");
+    $("#mask").removeClass("hidden");
+   });
+
+  $("#modal-close").click(function(){
+    $("#modal").addClass("hidden");
+    $("#mask").addClass("hidden");
+  });
+  
+  $("#mask").click(function(){
+    $("#modal-close").click();
+  });
 });

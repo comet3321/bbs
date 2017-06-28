@@ -16,6 +16,9 @@
     $sql_result = $pdo->query("select * from posts order by id desc limit 5, 100");
     $post = $pdo->query("select * from posts");
     $posts = $post->fetchAll();
+    $post_num = count($posts);
+    $i = 0;
+
 
   } catch (Exception $e) {
     echo $e->getMessage() . PHP_EOL;
@@ -31,8 +34,9 @@
    </head>
    <body>
      <?php foreach ($sql_result as $row) : ?>
+       <?php $i++ ?>
        <dt>
-           <span style="color: #e67e22;">名前：<?= h($row["name"]) ?></span>　<span style ="font-size: 15px; color: #a0a0a0;"><?= h($row["created"])?>　ID:<?= h($row["crypt"]) ?></span><br>
+           <span><?= $post_num - ($i + 4); ?></span><span style="color: #e67e22;">名前：<?= h($row["name"]) ?></span>　<span style ="font-size: 15px; color: #a0a0a0;"><?= h($row["created"])?>　ID:<?= h($row["crypt"]) ?></span><br>
        </dt>
        <dd>
          <?=  h($row["body"]) ?>
