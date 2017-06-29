@@ -15,7 +15,24 @@ try {
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
   $name = $_POST['name'];
   $comments = $_POST['text'];
-  $password = $_POST['password'];
+  $pass = $_POST['password'];
+
+  //文字数確認
+  if($name === "" || mb_strlen($name) > 15){
+      echo "入力が不正です。";
+      return false;
+    }
+  if($comments === "" || mb_strlen($comments) > 255){
+      echo "入力が不正です。";
+      return false;
+  }
+  if($pass === "" || mb_strlen($pass) < 8){
+      echo "入力が不正です。";
+      return false;
+  }
+
+  $password = hash_hmac('sha256', $pass, 'dheqeuiqwehfg');
+
   //挿入
   $stmt = $pdo->prepare('insert into posts(name, body, crypt, password) values(?, ?, ?, ?)');
   $stmt->execute([$name, $comments,$id, $password]);

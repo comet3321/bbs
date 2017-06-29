@@ -1,3 +1,5 @@
+
+
 body{
   font-family: Arial, sans-serif;
   background-color: #dedede;
@@ -58,8 +60,8 @@ header{
 
 }
 #post-row{
-  margin-bottom: 50px;
-  width: 750px;
+  margin-top: 50px;
+  width: 800px;
   text-align: left;
 
 }
@@ -71,6 +73,9 @@ dd{
   position: relative;
   margin-bottom: 40px;
   font-size: 20px;
+  width: 710px;
+  word-wrap: break-word;
+  padding-right: 190px;
 }
 
 a{
@@ -100,19 +105,20 @@ a:hover{
   padding: 20px;
   border-radius: 4px;
   position: absolute;
-  top: 40px;
+  top: 210px;
   left: 0;
   right: 0;
   margin: 0 auto;
   transition: .8s;
   z-index: 2;
+  border: solid 2px #001e43;
 }
 #mask.hidden {
   display: none;
 }
 
 #modal.hidden {
-  transform: translate(0, -500px);
+  transform: translate(0, -800px);
 }
 
 #modal-open{
@@ -128,23 +134,21 @@ a:hover{
   cursor: pointer;
 }
 
-#modal form{
-
-}
-
 #modal input{
   border:solid 1px #ccc;
   margin:0 0 20px;
-  width:300px;
+  width: 342px;
 }
 
 #modal label{
-  display:inline-block;
-  width: 43px;
+  display:block;
+  color: #646464;
+  letter-spacing: 0.1em;
 }
 
 #modal textarea{
   width: 342px;
+  letter-spacing: 0.1em;
 }
 
 #modal button{
@@ -152,9 +156,9 @@ a:hover{
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
-  background: #001e43;
+  background: #e67e22;
   color: #FFF;
-  border-bottom: solid 4px #003780;
+  border-bottom: solid 4px #e69c5c;
   border-radius: 3px;
   cursor: pointer;
 }

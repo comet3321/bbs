@@ -36,10 +36,10 @@
      <?php foreach ($sql_result as $row) : ?>
        <?php $i++ ?>
        <dt>
-           <span><?= $post_num - ($i + 4); ?></span><span style="color: #e67e22;">名前：<?= h($row["name"]) ?></span>　<span style ="font-size: 15px; color: #a0a0a0;"><?= h($row["created"])?>　ID:<?= h($row["crypt"]) ?></span><br>
+           <span style="color: #e67e22; margin-right:10px;"><?= $post_num - ($i + 4); ?></span><span style="color: #e67e22;">名前：<?= h($row["name"]) ?></span>　<span style ="font-size: 15px; color: #a0a0a0;"><?= h($row["created"])?>　ID:<?= h($row["crypt"]) ?></span><br>
        </dt>
        <dd>
-         <?=  h($row["body"]) ?>
+         <?=  nl2br(h($row["body"])) ?>
          <a href="confirm.php?id=<?= h($row["id"]) ?>">削除</a>
        </dd>
       <?php endforeach; ?>

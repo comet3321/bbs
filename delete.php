@@ -4,7 +4,9 @@
 
   if (is_int($_POST['user_id']) || is_string($_POST['delete_pass'])) {
     $user_id = $_POST['user_id'];
-    $request_pass = $_POST['delete_pass'];
+    $pass = $_POST['delete_pass'];
+    $request_pass = hash_hmac('sha256', $pass, 'dheqeuiqwehfg');
+
   }else{
     echo '入力された値が不正です。';
   }

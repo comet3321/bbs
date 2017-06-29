@@ -48,9 +48,9 @@
          <div class="container">
            <div id="modal"  class="hidden">
              <form  action="actions.php" method="post">
-               <label for="name">Name</label>
+               <label for="name">名前</label>
                <input type="text" name="name" value="" id="name"><br>
-               <label for="password">Pass</label>
+               <label for="password">削除用パスワード</label>
                <input type="password" name="password" value=""><br>
                <textarea name="text" rows="8" cols="40" placeholder="ここにコメントを記入してください。"></textarea><br>
                <button type="submit" name="submit" id="submit">書き込む</button>
@@ -68,10 +68,10 @@
              <?php foreach ($sql_result as $row) : ?>
                <?php $i++ ?>
                <dt>
-                   <span><?= $post_num - $i; ?></span><span style="color: #e67e22;">名前：<?= h($row["name"]) ?></span>　<span style ="font-size: 15px; color: #a0a0a0;"><?= h($row["created"])?>　ID:<?= h($row["crypt"]) ?></span><br>
+                   <span style="color: #e67e22; margin-right:10px;"><?= $post_num - $i; ?></span><span style="color: #e67e22;">名前：<?= h($row["name"]) ?></span>　<span style ="font-size: 15px; color: #a0a0a0;"><?= h($row["created"])?>　ID:<?= h($row["crypt"]) ?></span><br>
                </dt>
                <dd>
-                 <?=  h($row["body"]) ?>
+                 <?=  nl2br(h($row["body"])) ?>
                  <a href="confirm.php?id=<?= h($row["id"]) ?>">削除</a>
                </dd>
               <?php endforeach; ?>
