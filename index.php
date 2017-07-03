@@ -1,7 +1,6 @@
 <?php
   require_once(__DIR__ . '/config.php');
   require_once(__DIR__ . '/functions.php');
-
   try {
     $pdo = new PDO(DSN, DB_USERNAME, DB_PASSWORD);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -18,11 +17,9 @@
     $posts = $post->fetchAll();
     $post_num = count($posts);
     $i = -1;
-
   } catch (Exception $e) {
     echo $e->getMessage() . PHP_EOL;
   }
-
  ?>
 
  <!DOCTYPE html>
@@ -64,6 +61,9 @@
             <h2>投稿する</h2>
            </div><!-- modal-open -->
           <div id="post-row">
+            <?php if ($post_num == 0): ?>
+              <p>まだ投稿はありません。</p>
+            <?php endif; ?>
             <dl>
              <?php foreach ($sql_result as $row) : ?>
                <?php $i++ ?>
@@ -77,7 +77,9 @@
               <?php endforeach; ?>
             </dl>
             <div id="load_result"></div>
-            <button id="load_more">全件表示</button>
+            <?php if ($post_num > 5) : ?>
+              <button id="load_more">全件表示</button>
+            <?php endif; ?>
           </div><!-- post-row -->
          </div><!--container -->
        </div><!-- main -->
