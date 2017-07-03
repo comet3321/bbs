@@ -2,8 +2,7 @@
 
 require_once(__DIR__ . '/config.php');
 
-$ip = $_SERVER["REMOTE_ADDR"];
-$id = crypt($ip, 's2');
+$id = crypt($_COOKIE["PHPSESSID"], 'rq');
 
 try {
   $pdo = new PDO(DSN, DB_USERNAME, DB_PASSWORD);

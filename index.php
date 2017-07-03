@@ -1,6 +1,11 @@
 <?php
   require_once(__DIR__ . '/config.php');
   require_once(__DIR__ . '/functions.php');
+
+  session_start([
+    'cookie_lifetime' => 86400,
+]);
+
   try {
     $pdo = new PDO(DSN, DB_USERNAME, DB_PASSWORD);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
