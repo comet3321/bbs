@@ -1,12 +1,6 @@
 BBS
 ====
 
-Overview
-this is a bbs!!
-## Description
+![bbs01](https://raw.githubusercontent.com/comet3321/bbs/master/bbs01.png)
 
-## Demo
-
-## Requirement
-
-## Usage
+![bbs01](https://raw.githubusercontent.com/comet3321/bbs/master/bbs02.png)
